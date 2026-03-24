@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câncer: A Melhor Coisa que Me Aconteceu, Raquel Saraiva</title>
+  <meta name="description" content="O livro de Raquel Saraiva sobre como o câncer foi a melhor coisa que lhe aconteceu. Pré-lançamento disponível em breve." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --noite:    #0E0B1A;
+      --violeta:  #1C1140;
+      --purpura:  #2E1A5C;
+      --ouro:     #C8A96E;
+      --ouro-l:   #E8D4A8;
+      --teal:     #3DA8A0;
+      --coral:    #E07D6B;
+      --branco:   #F5F0E8;
+      --cinza:    #8A8595;
+      --claro1:   #F5EFE6;
+      --claro2:   #EDE8F2;
+      --texto-dk: #1C1140;
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --display:  'Alexandria', sans-serif;
+      --sans:     'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--noite);
+      color: var(--branco);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.35;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(14,11,26,0.95), transparent);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--noite);
+      background: var(--ouro);
+      padding: 10px 24px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover { background: var(--ouro-l); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 70% 40%, rgba(46,26,92,0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 20% 80%, rgba(61,168,160,0.08) 0%, transparent 60%),
+        var(--noite);
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 64px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pre-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 32px;
+    }
+    .pre-label::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(44px, 5.5vw, 80px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--ouro);
+      font-weight: 300;
+    }
+
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(16px, 1.8vw, 22px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cinza);
+      margin-bottom: 48px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-autor {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 52px;
+    }
+
+    .divider-ouro {
+      width: 64px;
+      height: 1px;
+      background: linear-gradient(to right, var(--ouro), transparent);
+      margin-bottom: 36px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.65);
+      max-width: 420px;
+      margin-bottom: 52px;
+    }
+
+    /* Form */
+    .form-group {
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      border: 1px solid rgba(200,169,110,0.3);
+    }
+
+    .form-group input {
+      flex: 1;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.04);
+      border: none;
+      color: var(--branco);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      outline: none;
+    }
+    .form-group input::placeholder { color: rgba(245,240,232,0.35); }
+
+    .form-group button {
+      padding: 16px 28px;
+      background: var(--ouro);
+      border: none;
+      color: var(--noite);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s;
+      white-space: nowrap;
+    }
+    .form-group button:hover { background: var(--ouro-l); }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--cinza);
+      margin-top: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Hero right, book */
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 40px 60px 0;
+      overflow: visible;
+    }
+
+    .book-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .book-glow {
+      position: absolute;
+      width: 480px;
+      height: 580px;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.18) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: 0;
+    }
+
+    .book-img {
+      width: clamp(300px, 38vw, 540px);
+      height: auto;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.35)) drop-shadow(0 0 120px rgba(200,169,110,0.35));
+      transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+      transition: transform 0.6s ease;
+    }
+    .book-img:hover {
+      transform: perspective(900px) rotateY(-2deg) rotateX(0deg) translateY(-12px);
+      filter: drop-shadow(0 60px 100px rgba(0,0,0,0.35)) drop-shadow(0 0 140px rgba(200,169,110,0.5));
+    }
+
+    /* ── CITACAO ── */
+    .citacao-section {
+      padding: 120px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: #F5EFE6;
+      border-top: none;
+    }
+
+    .citacao-section::before { display: none; }
+
+    .citacao-inner { max-width: 780px; position: relative; z-index: 1; }
+
+    .aspas {
+      font-family: var(--serif);
+      font-size: 120px;
+      line-height: 0;
+      color: var(--ouro);
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .citacao-texto {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.5vw, 44px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--violeta);
+      margin-bottom: 32px;
+    }
+
+    .citacao-autor {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ouro);
+    }
+
+    /* ── SOBRE O LIVRO ── */
+    .sobre-section {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      background: var(--noite);
+      border-top: none;
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 40px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(26px, 3.2vw, 44px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .section-title em { font-style: normal; color: var(--ouro); font-weight: 300; }
+
+    .section-body {
+      font-size: 15px;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.65);
+    }
+
+    .section-body p + p { margin-top: 18px; }
+
+    /* Capítulos grid */
+    .caps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(200,169,110,0.1);
+      margin-top: 20px;
+    }
+
+    .cap-item {
+      background: var(--noite);
+      padding: 24px 28px;
+      transition: background 0.3s;
+    }
+    .cap-item:hover { background: rgba(46,26,92,0.5); }
+
+    .cap-num {
+      font-family: var(--serif);
+      font-size: 11px;
+      color: var(--ouro);
+      letter-spacing: 0.2em;
+      margin-bottom: 6px;
+    }
+
+    .cap-titulo {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--branco);
+      line-height: 1.3;
+    }
+
+    /* ── AUTORA ── */
+    .autora-section {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 80px;
+      align-items: center;
+      background: #EDE8F2;
+      border-top: none;
+    }
+
+    .autora-foto-wrap {
+      position: relative;
+    }
+
+    .autora-foto {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(15%) contrast(1.05);
+    }
+
+    .autora-foto-frame {
+      position: absolute;
+      inset: 16px -16px -16px 16px;
+      border: 1px solid rgba(200,169,110,0.25);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .autora-nome {
+      font-family: var(--display);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 800;
+      line-height: 1.0;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--violeta);
+    }
+
+    .autora-cargo {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #7B3FA0;
+      margin-bottom: 32px;
+    }
+
+    .autora-bio {
+      font-size: 15px;
+      line-height: 1.9;
+      color: rgba(28,17,64,0.88);
+    }
+
+    .autora-bio p + p { margin-top: 16px; }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .tag {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border: 1px solid rgba(61,32,96,0.35);
+      color: rgba(61,32,96,0.85);
+      background: rgba(255,255,255,0.5);
+    }
+
+    /* ── DEPOIMENTOS ── */
+    .depoimentos-section {
+      padding: 100px 80px;
+      background: #F9F5EE;
+      border-top: none;
+    }
+
+    .depoimentos-header {
+      text-align: center;
+      margin-bottom: 64px;
+      color: var(--violeta);
+    }
+
+    .dep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(200,169,110,0.2);
+    }
+
+    .dep-item {
+      background: #FFFCF7;
+      padding: 40px 36px;
+    }
+
+    .dep-estrelas {
+      color: var(--ouro);
+      font-size: 14px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .dep-texto {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(28,17,64,0.8);
+      margin-bottom: 24px;
+    }
+
+    .dep-nome {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #5B3A9A;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-section {
+      padding: 120px 80px;
+      text-align: center;
+      position: relative;
+      background: #1C0F3F;
+      border-top: none;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(46,26,92,0.4) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+    .cta-title {
+      font-family: var(--display);
+      font-size: clamp(26px, 3.2vw, 44px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-title em { font-style: normal; color: var(--ouro); font-weight: 300; }
+
+    .cta-sub {
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.55);
+      margin-bottom: 48px;
+    }
+
+    .form-center {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(200,169,110,0.1);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: var(--ouro);
+    }
+
+    .footer-info {
+      font-size: 11px;
+      color: var(--cinza);
+      text-align: center;
+    }
+
+    .footer-isbn {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--cinza);
+    }
+
+    /* ── ANIMAÇÕES ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes floatBook {
+      0%, 100% { transform: perspective(900px) rotateY(-5deg) rotateX(2deg) translateY(0); }
+      50%       { transform: perspective(900px) rotateY(-5deg) rotateX(2deg) translateY(-16px); }
+    }
+
+    .hero-left > * {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.35s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.45s; }
+    .hero-left > *:nth-child(5) { animation-delay: 0.55s; }
+    .hero-left > *:nth-child(6) { animation-delay: 0.65s; }
+    .hero-left > *:nth-child(7) { animation-delay: 0.75s; }
+    .hero-left > *:nth-child(8) { animation-delay: 0.85s; }
+
+    .book-img {
+      opacity: 0;
+      animation: fadeIn 1s ease 0.4s forwards, floatBook 6s ease-in-out 1.5s infinite;
+    }
+
+    /* ── CROCHÊ DECORATIVO (SVG inline) ── */
+    .croche-divider {
+      display: flex;
+      justify-content: center;
+      padding: 16px 0;
+      opacity: 0.5;
+    }
+
+
+    .btn-compra {
+      display: inline-block;
+      padding: 18px 44px;
+      background: var(--ouro);
+      color: var(--noite);
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-compra:hover {
+      background: var(--ouro-l);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(200,169,110,0.3);
+    }
+    .btn-compra-lg {
+      padding: 22px 64px;
+      font-size: 13px;
+    }
+
+    /* ── SUCESSO ── */
+    .success-msg {
+      display: none;
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--teal);
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-right {
+        padding: 40px 40px 80px;
+        order: -1;
+      }
+      .hero-left {
+        padding: 60px 40px 80px;
+      }
+      .book-img { width: 200px; }
+      .sobre-section.autora-section {
+        grid-template-columns: 1fr;
+        padding: 60px 40px;
+        gap: 48px;
+      }
+      .dep-grid { grid-template-columns: 1fr; }
+      nav { padding: 20px 24px; }
+      .citacao-section.depoimentos-section.cta-section { padding: 80px 40px; }
+      footer { flex-direction: column; gap: 16px; padding: 32px 40px; text-align: center; }
+      .caps-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .form-group { flex-direction: column; }
+      .form-group button { padding: 14px; }
+      .autora-foto { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Raquel Saraiva</a>
+    <a href="https://link-prevenda.com.br" target="_blank" class="nav-cta">Pré-venda</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-left">
+      <span class="pre-label">Pré-lançamento 2025</span>
+
+      <h1 class="hero-title">
+        Câncer<br>
+        <em>A Melhor Coisa</em><br>
+        que Me<br>
+        Aconteceu
+      </h1>
+
+      <p class="hero-subtitle">O outro lado da história que ninguém te conta</p>
+
+      <p class="hero-autor">Raquel Saraiva</p>
+
+      <div class="divider-ouro"></div>
+
+      <p class="hero-desc">
+        Aos vinte e cinco anos, ela recebeu um diagnóstico que mudaria tudo.
+        O que veio depois não foi uma história linear de dor, foi um mergulho honesto
+        nas contradições, no humor inesperado e nas revelações que só a proximidade
+        com a morte é capaz de trazer.
+      </p>
+
+      <div>
+        <a href="https://link-prevenda.com.br" target="_blank" class="btn-compra">
+          Garantir Meu Exemplar
+        </a>
+        <p class="form-note" style="margin-top:16px;">Pré-venda disponível. Entrega no lançamento.</p>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="book-wrapper">
+        <div class="book-glow"></div>
+        <!-- Substitua o src pela imagem real do mockup do livro -->
+        <img
+          src="mockup-livro.png"
+          alt="Câncer A Melhor Coisa que Me Aconteceu, Raquel Saraiva"
+          class="book-img"
+          onerror="this.style.display='none'; document.querySelector('.book-placeholder').style.display='flex';"
+        />
+        <!-- Placeholder se não tiver imagem -->
+        <div class="book-placeholder" style="display:none; width:260px; height:380px; background:linear-gradient(135deg,#2E1A5C,#1C1140); border:1px solid rgba(200,169,110,0.3); flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px; gap:16px;">
+          <p style="font-family:var(--sans);font-size:9px;letter-spacing:0.3em;color:var(--ouro);text-transform:uppercase;">Raquel Saraiva</p>
+          <p style="font-family:var(--serif);font-size:22px;font-weight:300;font-style:italic;color:var(--branco);line-height:1.3;">Câncer<br><strong>A Melhor Coisa</strong><br>que Me Aconteceu</p>
+          <p style="font-family:var(--sans);font-size:9px;color:var(--cinza);letter-spacing:0.1em;">O outro lado da história<br>que ninguém te conta</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITAÇÃO -->
+  <section class="citacao-section">
+    <div class="citacao-inner">
+      <span class="aspas">"</span>
+      <p class="citacao-texto">
+        O câncer foi a melhor coisa que me aconteceu.
+      </p>
+      <p class="citacao-autor">, Raquel Saraiva</p>
+    </div>
+  </section>
+
+  <!-- SOBRE O LIVRO -->
+  <section class="sobre-section">
+    <div>
+      <p class="section-label" style="color:var(--teal);">O Livro</p>
+      <h2 class="section-title" style="color:#F5F0E8;">Uma história que<br>ninguém <em>ousa contar</em></h2>
+      <div class="section-body">
+        <p>
+          Quimioterapia e baladas. Transplante de medula e azeitona contrabandeada dentro do hospital.
+          Uma mãe que saiu correndo do chuveiro para socorrer a filha, uma enfermeira que trouxe
+          a boneca da infância numa mala de viagem.
+        </p>
+        <p>
+          Com voz direta, íntima e um humor que desarma, Raquel Saraiva transforma em
+          literatura o que muitos não teriam coragem de dizer em voz alta.
+        </p>
+        <p>
+          Este não é um livro sobre sobrevivência. É sobre o que você descobre
+          quando para de tentar sobreviver e começa a viver.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div class="caps-grid">
+        <div class="cap-item">
+          <p class="cap-num">Cap. 01</p>
+          <p class="cap-titulo">A Dor que Não Passa</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 04</p>
+          <p class="cap-titulo">O Livramento da Cicatriz</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 06</p>
+          <p class="cap-titulo">A Queda do Cabelo</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 09</p>
+          <p class="cap-titulo">Metástase, Esterilidade e Abandono</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 10</p>
+          <p class="cap-titulo">O Meu Anjo Bom</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 13</p>
+          <p class="cap-titulo">O Transplante e as Histórias que Ninguém Conta</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 15</p>
+          <p class="cap-titulo">A Conversa com a Morte</p>
+        </div>
+        <div class="cap-item">
+          <p class="cap-num">Cap. 17</p>
+          <p class="cap-titulo">O Que Eu Aprendi no Caminho</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORA -->
+  <section class="autora-section">
+    <div class="autora-foto-wrap">
+      <!-- Substitua o src pela Foto_01.png da autora -->
+      <img
+        src="foto-autora.png"
+        alt="Raquel Saraiva"
+        class="autora-foto"
+        onerror="this.style.background='linear-gradient(to bottom, #2E1A5C, #1C1140)'; this.removeAttribute('onerror');"
+      />
+      <div class="autora-foto-frame"></div>
+    </div>
+
+    <div>
+      <p class="section-label" style="color:#7B3FA0;">A Autora</p>
+      <h2 class="autora-nome">Raquel<br>Saraiva</h2>
+      <p class="autora-cargo">Especialista em B2B · Escritora · Sobrevivente</p>
+
+      <div class="autora-bio">
+        <p>
+          Especialista em relacionamento B2B e vendas consultivas, com MBA Executivo pela PUCRS.
+          Graduada em Biomedicina pelo IBMR, curso que iniciou durante o próprio tratamento oncológico
+          e concluiu já em remissão.
+        </p>
+        <p>
+          Em 2012, aos vinte e cinco anos, foi diagnosticada com Linfoma não Hodgkin de mediastino
+          com metástase. Dez anos após o transplante de medula óssea, com remissão completa,
+          transforma sua travessia em seu primeiro livro.
+        </p>
+        <p>
+          <em style="font-family:var(--serif);font-style:italic;color:#3D2060;font-size:15px;">
+            "Não escrevi este livro para gerar pena. Escrevi para que alguém, em algum lugar,
+            leia e pense: se ela conseguiu, eu também posso."
+          </em>
+        </p>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Linfoma não Hodgkin</span>
+        <span class="tag">Transplante de Medula</span>
+        <span class="tag">Superação</span>
+        <span class="tag">Biomedicina</span>
+        <span class="tag">Fé</span>
+        <span class="tag">Recomeço</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos-section">
+    <div class="depoimentos-header">
+      <p class="section-label" style="justify-content:center;color:#5B3A9A;">Quem já leu</p>
+      <h2 class="section-title" style="color:#1C1140;">O que dizem<br>sobre <em>este livro</em></h2>
+    </div>
+
+    <div class="dep-grid">
+      <div class="dep-item">
+        <p class="dep-estrelas">★★★★★</p>
+        <p class="dep-texto">"Algumas pessoas entram na sua vida e o antes e o depois de conhecê-las são versões muito diferentes de você. Este livro faz exatamente isso."</p>
+        <p class="dep-nome">Suzana Ribeiro, Prefácio</p>
+      </div>
+      <div class="dep-item">
+        <p class="dep-estrelas">★★★★★</p>
+        <p class="dep-texto">"Mais do que contar uma história de superação, este livro revela quem a Raquel se tornou: uma mulher forte, humana e profundamente inspiradora."</p>
+        <p class="dep-nome">Leitora Beta</p>
+      </div>
+      <div class="dep-item">
+        <p class="dep-estrelas">★★★★★</p>
+        <p class="dep-texto">"Esse desconforto vale. Fique com ele. Porque do outro lado existe algo raro: a possibilidade real de transformação."</p>
+        <p class="dep-nome">Fernanda Lins</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section" id="notificar">
+    <div class="cta-inner">
+      <p class="section-label" style="justify-content:center;color:var(--ouro);">Pré-venda Aberta</p>
+      <h2 class="cta-title">
+        Seja o primeiro<br>a ter <em>este livro</em>
+      </h2>
+      <p class="cta-sub">
+        A pré-venda está aberta. Garanta o seu exemplar agora e receba assim que o livro for lançado.
+      </p>
+
+      <div class="form-center" style="text-align:center;">
+        <a href="https://link-prevenda.com.br" target="_blank" class="btn-compra btn-compra-lg">
+          Garantir Meu Exemplar na Pré-venda
+        </a>
+        <p class="form-note" style="text-align:center;margin-top:16px;">Pré-venda disponível. Entrega no lançamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">Raquel Saraiva</p>
+    <p class="footer-info">
+      Câncer: A Melhor Coisa que Me Aconteceu<br>
+      © 2025 Raquel Saraiva. Todos os direitos reservados.
+    </p>
+    <p class="footer-isbn">ISBN 978-65-02-00999-4</p>
+  </footer>
+
+  <script>
+    function inscrever(inputId, successId) {
+      const input = document.getElementById(inputId);
+      const success = document.getElementById(successId);
+      const email = input.value.trim();
+
+      if (!email || !email.includes('@')) {
+        input.style.borderBottom = '1px solid #E07D6B';
+        input.placeholder = 'Digite um e-mail válido';
+        return;
+      }
+
+      // Aqui você conecta ao seu serviço de e-mail (Mailchimp, ConvertKit, etc.)
+      // Por enquanto, simula o sucesso
+      input.parentElement.style.display = 'none';
+      success.style.display = 'block';
+
+      // Para integrar com Mailchimp ou similar, substitua por:
+      // fetch('SUA_URL_API', { method: 'POST', body: JSON.stringify({ email }) })
+    }
+
+    // Intersection Observer para animar elementos ao entrar na tela
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-label.section-title.section-body.autora-nome.citacao-texto.dep-item.cap-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
