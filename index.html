@@ -4,21 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>O Câncer foi a Melhor Coisa que me Aconteceu – Raquel Saraiva</title>
-  <meta name="description" content="O outro lado da história que ninguém te conta. Livro de Raquel Saraiva em pré-venda." />
-
+  
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #222222;
-      --primary: #5b2aa8;
-      --primary-dark: #431f7c;
-      --accent: #ff6b6b;
-      --muted: #666666;
-      --border: #e5e5e5;
-      --section-padding: 64px;
+      /* Cores extraídas da capa do livro */
+      --primary: #4b246a; /* Roxo profundo da capa */
+      --secondary: #1d2a4f; /* Marinho do blazer da autora */
+      --accent: #d81e5b; /* Magenta dos detalhes da capa */
+      --text: #1a1a1a;
+      --light-bg: #fdfcfd;
+      --border: #e0d5e8;
       --max-width: 1100px;
-      --radius: 12px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.15);
     }
 
     * {
@@ -28,12 +24,17 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
-      background: var(--bg);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--light-bg);
       color: var(--text);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TIPOGRAFIA - CAIXA ALTA CONFORME SOLICITADO */
+    h1, h2, h3, .eyebrow, .btn, .nav-brand, .topic-title {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 800;
     }
 
     img {
@@ -42,761 +43,261 @@
       display: block;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Layout geral */
-
     .container {
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 16px;
+      padding: 0 20px;
     }
 
+    /* HEADER */
     header {
+      background: #fff;
+      border-bottom: 2px solid var(--primary);
+      padding: 15px 0;
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.9);
-      border-bottom: 1px solid var(--border);
+      z-index: 100;
     }
 
     .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 14px 16px;
-      gap: 16px;
+      align-items: center;
     }
 
     .nav-brand {
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .nav-cta {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .nav-cta small {
-      font-size: 12px;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid transparent;
+      color: var(--primary);
       font-size: 14px;
-      font-weight: 500;
+    }
+
+    /* BOTÕES SEM DEGRADÊ */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+      font-size: 13px;
+      border: none;
       cursor: pointer;
-      transition: all 0.18s ease-out;
-      white-space: nowrap;
+      text-align: center;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #ffffff;
-      box-shadow: 0 14px 30px rgba(91, 42, 168, 0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(91, 42, 168, 0.5);
+    .btn:hover {
+      background: var(--secondary);
     }
 
     .btn-outline {
-      border-color: var(--border);
-      background: #ffffff;
-      color: var(--text);
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
     }
 
-    .btn-outline:hover {
-      background: #f9fafb;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    section {
-      padding: var(--section-padding) 0;
-    }
-
-    /* HERO */
-
+    /* HERO SECTION */
     .hero {
+      padding: 60px 0;
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
       align-items: center;
     }
 
-    .hero-text {
-      flex: 1 1 320px;
-      min-width: 0;
-    }
+    .hero-text { flex: 1 1 500px; }
+    .hero-image { flex: 1 1 350px; text-align: center; }
 
     .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 600;
-      color: var(--primary);
+      color: var(--accent);
+      font-size: 14px;
       margin-bottom: 10px;
+      display: block;
     }
 
-    .hero-title {
-      font-size: clamp(2.1rem, 5vw, 2.8rem);
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
       line-height: 1.1;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      color: var(--primary);
     }
 
     .hero-subtitle {
-      font-size: 17px;
-      color: var(--muted);
-      margin-bottom: 20px;
-      max-width: 34rem;
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #444;
     }
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
+    .hero-image img {
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+      max-width: 400px;
+      margin: 0 auto;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #f3e8ff;
-      color: #4a1fb8;
-      font-size: 11px;
-      font-weight: 500;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .hero-cta-note {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .hero-guarantee {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .hero-image {
-      flex: 0 1 330px;
-    }
-
-    .hero-card {
-      border-radius: 24px;
-      background: #ffffff;
-      box-shadow: var(--shadow-soft);
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .hero-card-cover {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .hero-card-caption {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* Seções padrão */
-
-    .section-heading {
-      max-width: 620px;
-      margin: 0 auto 32px;
+    /* SEÇÃO SOBRE O LIVRO */
+    .section-white { padding: 80px 0; background: #fff; }
+    .section-title {
       text-align: center;
+      margin-bottom: 50px;
+      font-size: 2rem;
+      color: var(--primary);
     }
 
-    .section-heading h2 {
-      font-size: 1.9rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* O livro */
-
-    .layout-two-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: flex-start;
-    }
-
-    .layout-two-columns > div {
-      flex: 1 1 320px;
-      min-width: 0;
-    }
-
-    .book-topics {
+    .grid-2 {
       display: grid;
-      gap: 14px;
-      margin-top: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
     }
 
     .topic {
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      font-size: 14px;
-      background: #ffffff;
+      background: #f8f5f9;
+      padding: 20px;
+      border-left: 4px solid var(--primary);
+      margin-bottom: 15px;
     }
 
-    .topic-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
+    .topic-title { font-size: 14px; margin-bottom: 5px; color: var(--primary); }
 
-    .topic small {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* Autora */
-
-    .author-card {
+    /* SEÇÃO AUTORA - RECORTE COM DESTAQUE */
+    .author-section { padding: 80px 0; background: #f4f1f6; }
+    
+    .author-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 50px;
       align-items: center;
-      border-radius: 24px;
-      background: #f9fafb;
-      padding: 24px;
-      border: 1px solid var(--border);
     }
 
-    .author-photo {
-      flex: 0 1 220px;
-    }
-
-    .author-photo-inner {
-      border-radius: 18px;
+    .author-image-wrapper {
+      flex: 1 1 300px;
+      height: 450px; /* Altura fixa para controlar o crop */
       overflow: hidden;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.35);
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
-    .author-content {
-      flex: 1 1 280px;
-      min-width: 0;
+    .author-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Faz o crop */
+      object-position: 50% 15%; /* Foca no rosto e na parte superior, onde está o livro */
     }
 
-    .author-content h3 {
-      font-size: 1.4rem;
-      margin-bottom: 6px;
+    .author-content { flex: 1 1 400px; }
+    .author-content h2 { margin-bottom: 20px; color: var(--primary); }
+
+    /* PRÉ-VENDA - CORES DA CAPA */
+    .cta-box {
+      background: var(--primary);
+      color: #fff;
+      padding: 50px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 60px;
     }
 
-    .author-tagline {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
+    .cta-box h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .cta-box .btn { background: #fff; color: var(--primary); font-weight: bold; }
+    .cta-box .btn:hover { background: #f0f0f0; }
 
-    .author-content p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* Depoimentos */
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .testimonial {
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 16px;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      box-shadow: 0 8px 22px rgba(148, 163, 184, 0.18);
-    }
-
-    .stars {
-      color: #fbbf24;
-      font-size: 13px;
-    }
-
-    .testimonial p {
-      font-size: 14px;
-    }
-
-    .testimonial small {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Seção pré-venda */
-
-    .cta-section-inner {
-      border-radius: 28px;
-      background: radial-gradient(circle at top left, #e9d5ff, #1f2937);
-      color: #ffffff;
-      padding: 28px 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      align-items: center;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.8);
-    }
-
-    .cta-text {
-      flex: 1 1 260px;
-    }
-
-    .cta-text h2 {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.03em;
-    }
-
-    .cta-text p {
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .cta-price {
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .cta-mockup {
-      flex: 0 1 230px;
-    }
-
-    .cta-mockup-inner {
-      transform: rotate(-8deg);
-      transform-origin: center;
-      filter: drop-shadow(0 18px 40px rgba(15, 23, 42, 0.8));
-    }
-
-    /* Rodapé */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 18px 0 26px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    footer .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer a {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-    }
-
-    /* Responsivo */
-
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-      }
-
-      .hero-text {
-        text-align: center;
-      }
-
-      .hero-subtitle,
-      .hero-guarantee {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-cta {
-        justify-content: center;
-      }
-
-      .hero-image {
-        max-width: 360px;
-        margin-inline: auto;
-      }
-
-      .nav {
-        padding-inline: 10px;
-      }
-
-      .nav-cta {
-        flex-direction: row-reverse;
-      }
-
-      .nav-cta small {
-        text-align: left;
-      }
-    }
-
+    /* RESPONSIVO CORRIGIDO */
     @media (max-width: 768px) {
-      :root {
-        --section-padding: 40px;
-      }
-
-      .nav {
-        flex-wrap: wrap;
-      }
-
-      .nav-brand {
-        flex: 1 1 100%;
-      }
-
-      .nav-cta {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .btn,
-      .btn-primary,
-      .btn-outline {
-        width: 100%;
-      }
-
-      .hero {
-        gap: 28px;
-      }
-
-      .section-heading h2 {
-        font-size: 1.6rem;
-      }
-
-      .author-card {
-        padding: 18px;
-      }
-
-      .cta-section-inner {
-        padding: 22px 18px;
-      }
-
-      .cta-mockup {
-        order: -1;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: 1.9rem;
-      }
-
-      header {
-        position: static;
-      }
-
-      section {
-        padding: 32px 0;
-      }
+      .hero { padding: 40px 0; flex-direction: column-reverse; text-align: center; }
+      .nav { flex-direction: column; gap: 15px; }
+      .author-image-wrapper { height: 350px; }
+      .cta-box { padding: 30px 15px; }
+      h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="container nav">
-        <div class="nav-brand">Raquel Saraiva · Livro</div>
-        <div class="nav-cta">
-          <small>Pré-venda aberta<br />Entrega no lançamento</small>
-          <a href="#pre-venda" class="btn btn-primary">Garantir meu exemplar</a>
+
+  <header>
+    <div class="container nav">
+      <div class="nav-brand">Raquel Saraiva</div>
+      <a href="#comprar" class="btn">Garantir meu livro</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="container hero">
+      <div class="hero-text">
+        <span class="eyebrow">Lançamento Exclusivo</span>
+        <h1>O Câncer foi a melhor coisa que me aconteceu.</h1>
+        <p class="hero-subtitle">Um relato visceral e transformador sobre o que realmente importa quando o tempo parece esgotar.</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a href="#comprar" class="btn">Compre na pré-venda</a>
+          <a href="#sobre" class="btn btn-outline">Conheça a história</a>
         </div>
       </div>
-    </header>
+      <div class="hero-image">
+        <!-- Mantendo o seu PNG original -->
+        <img src="mockup-livro.png" alt="Capa do Livro Raquel Saraiva" />
+      </div>
+    </section>
 
-    <main>
-      <!-- HERO -->
-      <section>
-        <div class="container hero">
-          <div class="hero-text">
-            <div class="eyebrow">O outro lado da história que ninguém te conta</div>
-            <h1 class="hero-title">O câncer foi a melhor coisa que me aconteceu.</h1>
-            <p class="hero-subtitle">
-              Aos vinte e cinco anos, ela recebeu um diagnóstico que mudaria tudo.
-              O que veio depois não foi uma história linear de dor, mas um mergulho
-              honesto nas contradições, no humor inesperado e nas revelações que só
-              a proximidade com a morte é capaz de trazer.
-            </p>
-
-            <div class="hero-badges">
-              <span class="badge">Baseado em uma história real</span>
-              <span class="badge">Humor, vulnerabilidade e coragem</span>
-              <span class="badge">Para pacientes, famílias e curiosos</span>
-            </div>
-
-            <div class="hero-cta">
-              <a href="#pre-venda" class="btn btn-primary">Quero ler essa história</a>
-              <a href="#livro" class="btn btn-outline">Ver o que tem no livro</a>
-            </div>
-            <p class="hero-cta-note">Pré-venda disponível. Entrega assim que o livro for lançado.</p>
-            <p class="hero-guarantee">
-              Se ao final da leitura você não sentir que foi transformado por essa
-              história, devolvo o valor integral do livro.
-            </p>
-          </div>
-
-          <div class="hero-image">
-            <div class="hero-card">
-              <div class="hero-card-cover">
-                <!-- mockup do livro -->
-                <img src="mockup-livro.png" alt="Mockup do livro O câncer foi a melhor coisa que me aconteceu" />
-              </div>
-              <p class="hero-card-caption">
-                Um relato cru, sensível e bem-humorado sobre quimioterapia,
-                transplante de medula, família, amigos – e tudo o que ninguém
-                te conta no meio do caminho.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- O LIVRO -->
-      <section id="livro">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Este não é um livro sobre sobrevivência.</h2>
-            <p>É sobre o que você descobre quando para de tentar sobreviver e começa a viver.</p>
-          </div>
-
-          <div class="layout-two-columns">
-            <div>
-              <p>
-                Quimioterapia e baladas. Transplante de medula e azeitona contrabandeada
-                dentro do hospital. Uma mãe que saiu correndo do chuveiro para
-                socorrer a filha, uma enfermeira que trouxe a boneca da infância
-                numa mala de viagem.
-              </p>
-              <br />
-              <p>
-                Com voz direta, íntima e um humor que desarma, Raquel Saraiva
-                transforma em literatura o que muitos não teriam coragem de dizer
-                em voz alta. Sem romantizar a dor, sem esconder o medo, sem
-                suavizar a realidade.
-              </p>
-              <br />
-              <p>
-                Mais do que um relato de doença, este livro é um convite para
-                reconfigurar prioridades, olhar para a própria história e
-                descobrir o que realmente importa quando tudo parece prestes a
-                acabar.
-              </p>
-            </div>
-
-            <div>
-              <div class="book-topics">
-                <div class="topic">
-                  <div class="topic-title">Cap. 01 · A dor que não passa</div>
-                  <small>Quando o corpo grita antes do diagnóstico aparecer.</small>
-                </div>
-                <div class="topic">
-                  <div class="topic-title">Cap. 04 · O livramento da cicatriz</div>
-                  <small>O que fica marcado por fora e por dentro.</small>
-                </div>
-                <div class="topic">
-                  <div class="topic-title">Cap. 06 · A queda do cabelo</div>
-                  <small>Identidade, vaidade e os pactos que fazemos com o espelho.</small>
-                </div>
-                <div class="topic">
-                  <div class="topic-title">Cap. 09 · Metástase, esterilidade e abandono</div>
-                  <small>Quando o tratamento atinge lugares onde o exame não alcança.</small>
-                </div>
-                <div class="topic">
-                  <div class="topic-title">Cap. 13 · O transplante e as histórias que ninguém conta</div>
-                  <small>O medo, a espera e as pequenas vitórias de cada dia.</small>
-                </div>
-                <div class="topic">
-                  <div class="topic-title">Cap. 17 · O que eu aprendi no caminho</div>
-                  <small>As perguntas que ficam depois que o tumor vai embora.</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- AUTORA -->
-      <section id="autora">
-        <div class="container">
-          <div class="section-heading">
-            <h2>A autora</h2>
-            <p>Especialista em B2B · Escritora · Sobrevivente</p>
-          </div>
-
-          <div class="author-card">
-            <div class="author-photo">
-              <div class="author-photo-inner">
-                <img src="foto-autora.png" alt="Foto de Raquel Saraiva" />
-              </div>
-            </div>
-            <div class="author-content">
-              <div class="author-tagline">Raquel Saraiva</div>
-              <h3>Quando o diagnóstico vira ponto de virada.</h3>
-              <p>
-                Especialista em relacionamento B2B e vendas consultivas, com MBA
-                Executivo pela PUCRS. Graduada em Biomedicina pelo IBMR, curso
-                que iniciou durante o próprio tratamento oncológico e concluiu
-                já em remissão.
-              </p>
-              <br />
-              <p>
-                Em 2012, aos vinte e cinco anos, foi diagnosticada com linfoma
-                não Hodgkin de mediastino com metástase. Dez anos após o
-                transplante de medula óssea, com remissão completa, transforma
-                sua travessia em seu primeiro livro.
-              </p>
-              <br />
-              <p>
-                “Não escrevi este livro para gerar pena. Escrevi para que
-                alguém, em algum lugar, leia e pense: se ela conseguiu, eu
-                também posso.”
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DEPOIMENTOS -->
-      <section id="depoimentos">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Quem já leu antes de você</h2>
-            <p>Leitores beta e prefácio contam como esse livro os atravessou.</p>
-          </div>
-
-          <div class="testimonials-grid">
-            <div class="testimonial">
-              <div class="stars">★★★★★</div>
-              <p>
-                “Algumas pessoas entram na sua vida e o antes e o depois de
-                conhecê-las são versões muito diferentes de você. Este livro faz
-                exatamente isso.”
-              </p>
-              <small>Suzana Ribeiro · Prefácio</small>
-            </div>
-            <div class="testimonial">
-              <div class="stars">★★★★★</div>
-              <p>
-                “Mais do que contar uma história de superação, este livro revela
-                quem a Raquel se tornou: uma mulher forte, humana e profundamente
-                inspiradora.”
-              </p>
-              <small>Leitora beta</small>
-            </div>
-            <div class="testimonial">
-              <div class="stars">★★★★★</div>
-              <p>
-                “Esse desconforto vale. Fique com ele. Porque do outro lado
-                existe algo raro: a possibilidade real de transformação.”
-              </p>
-              <small>Fernanda Lins</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PRÉ-VENDA -->
-      <section id="pre-venda">
-        <div class="container">
-          <div class="cta-section-inner">
-            <div class="cta-text">
-              <h2>Pré-venda aberta</h2>
-              <p>
-                Garanta seu exemplar agora e receba assim que o livro for
-                lançado. Você será avisado por e-mail sobre a data de envio e
-                novidades do lançamento.
-              </p>
-              <p class="cta-price">
-                Pagamento seguro. Tiragem limitada na primeira impressão.
-              </p>
-
-              <div class="cta-actions">
-                <!-- Substitua o href abaixo pelo link real de checkout/pagamento -->
-                <a href="https://seu-link-de-checkout-aqui.com" class="btn btn-primary">
-                  Garantir meu exemplar
-                </a>
-                <a href="#autora" class="btn btn-outline">Conhecer mais a autora</a>
-              </div>
-            </div>
-            <div class="cta-mockup">
-              <div class="cta-mockup-inner">
-                <img src="mockup-livro.jpg" alt="Mockup do livro na pré-venda" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
+    <!-- O QUE TEM NO LIVRO -->
+    <section id="sobre" class="section-white">
       <div class="container">
-        <span>© <span id="year"></span> Raquel Saraiva. Todos os direitos reservados.</span>
-        <span>Site desenvolvido para o lançamento do livro.</span>
+        <h2 class="section-title">O que você vai encontrar</h2>
+        <div class="grid-2">
+          <div>
+            <p>Este não é apenas um livro sobre doença. É um guia sobre perspectiva, resiliência e a coragem de olhar para a vida sem filtros. Raquel narra sua jornada dos 25 anos, do diagnóstico ao transplante, com uma honestidade que desarma.</p>
+            <br>
+            <p>Cada capítulo é um mergulho nas emoções reais, sem romantização, focando no aprendizado prático que a dor trouxe para sua carreira, relacionamentos e visão de mundo.</p>
+          </div>
+          <div>
+            <div class="topic">
+              <div class="topic-title">Capítulo 01: O choque</div>
+              <p style="font-size: 13px;">O momento em que o mundo para e as prioridades mudam.</p>
+            </div>
+            <div class="topic">
+              <div class="topic-title">Capítulo 09: A careca e a cura</div>
+              <p style="font-size: 13px;">Identidade e o que resta quando o exterior é levado.</p>
+            </div>
+            <div class="topic">
+              <div class="topic-title">Capítulo 17: O legado</div>
+              <p style="font-size: 13px;">As lições que transformaram uma biomédica em uma líder.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <!-- AUTORA COM CROP DESTAQUE -->
+    <section class="author-section">
+      <div class="container author-container">
+        <div class="author-image-wrapper">
+          <!-- O crop aqui foca no rosto e no livro que ela segura -->
+          <img src="foto-autora.png" alt="Raquel Saraiva segurando seu livro" />
+        </div>
+        <div class="author-content">
+          <h2>Sobre Raquel Saraiva</h2>
+          <p>Raquel é especialista em B2B e vendas consultivas, com MBA Executivo pela PUCRS. Sua trajetória é marcada pela superação de um linfoma não Hodgkin diagnosticado aos 25 anos.</p>
+          <br>
+          <p>Hoje, 10 anos após o transplante, ela compartilha como essa experiência moldou sua forma de liderar e viver, inspirando milhares de pessoas a ressignificarem suas próprias batalhas.</p>
+          <br>
+          <a href="https://linkedin.com" target="_blank" style="color: var(--primary); font-weight: bold; text-transform: uppercase; font-size: 12px;">Conectar no LinkedIn →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="comprar" class="container">
+      <div class="cta-box">
+        <h2>Garanta o seu exemplar</h2>
+        <p style="margin-bottom: 30px;">Participe da pré-venda e receba uma tiragem exclusiva com dedicatória.</p>
+        <a href="#" class="btn">Quero meu livro agora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 40px 0; text-align: center; font-size: 12px; color: #888;">
+    <div class="container">
+      <p>© 2024 RAQUEL SARAIVA. TODOS OS DIREITOS RESERVADOS.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
