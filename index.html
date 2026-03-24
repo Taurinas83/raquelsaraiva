@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Câncer: A Melhor Coisa que Me Aconteceu – Raquel Saraiva</title>
   
-  <!-- Fontes sofisticadas do seu original -->
-  //fonts.googleapis.com/css2?family=Alexandria:wght@200;400;700;800&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- CORREÇÃO: Link das fontes agora está completo -->
+  //fonts.googleapis.com/css2?family=Alexandria:wght@200;400;700;800&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
 
   <style>
     :root {
@@ -34,72 +34,72 @@
       overflow-x: hidden;
     }
 
-    /* TEXTURA DE GRÃO (MODERNO) */
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
+      content: ""; position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.3;
+      pointer-events: none; z-index: 1000; opacity: 0.3;
     }
 
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
       padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
       background: linear-gradient(to bottom, rgba(14,11,26,0.95), transparent);
     }
     .nav-logo { font-family: var(--serif); font-size: 18px; color: var(--ouro); text-transform: uppercase; letter-spacing: 0.2em; text-decoration: none; }
-    .nav-cta { background: var(--ouro); color: var(--noite); padding: 10px 24px; text-transform: uppercase; font-size: 11px; font-weight: 600; text-decoration: none; transition: 0.3s; }
+    .nav-socials { display: flex; gap: 20px; align-items: center; }
+    .nav-socials a { color: var(--branco); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; opacity: 0.6; transition: 0.3s; }
+    .nav-socials a:hover { opacity: 1; color: var(--ouro); }
 
     /* HERO */
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; position: relative; padding-top: 80px; }
-    .hero-left { padding-right: 40px; z-index: 2; }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; position: relative; padding-top: 100px; padding-bottom: 80px; }
     .hero-title { font-family: var(--display); font-size: clamp(40px, 6vw, 85px); font-weight: 800; line-height: 0.95; text-transform: uppercase; margin-bottom: 24px; }
     .hero-title em { font-style: normal; color: var(--ouro); font-weight: 300; }
     .hero-subtitle { font-family: var(--serif); font-size: 24px; font-style: italic; color: var(--cinza); margin-bottom: 40px; }
 
-    .hero-right { position: relative; display: flex; justify-content: center; }
     .book-img { 
       width: 100%; max-width: 500px; 
       filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5));
       transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
       transition: 0.6s ease;
     }
-    .book-img:hover { transform: perspective(1000px) rotateY(-2deg) rotateX(0deg) translateY(-10px); }
 
-    /* DESTAQUE CAPÍTULOS (MODERNO) */
+    /* SEÇÃO CAPÍTULOS - CORREÇÃO DE ESPAÇAMENTO */
     .caps-section { padding: 120px 0; background: rgba(255,255,255,0.02); }
-    .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.4em; color: var(--ouro); margin-bottom: 16px; display: block; }
+    .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.4em; color: var(--ouro); margin-bottom: 24px; display: block; }
     .section-title { font-family: var(--display); font-size: 40px; text-transform: uppercase; margin-bottom: 60px; }
 
-    .caps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(200,169,110,0.2); }
+    .caps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(200,169,110,0.15); }
     .cap-item { background: var(--noite); padding: 40px; transition: 0.3s; }
     .cap-item:hover { background: var(--purpura); }
     .cap-num { font-family: var(--serif); color: var(--ouro); font-size: 14px; margin-bottom: 12px; display: block; }
-    .cap-titulo { font-family: var(--display); font-size: 18px; font-weight: 400; color: var(--branco); }
 
-    /* AUTORA - CROP MODERNO */
+    /* AUTORA */
     .autora-section { padding: 120px 0; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
     .autora-foto-wrap { position: relative; height: 600px; border: 1px solid rgba(200,169,110,0.3); padding: 15px; }
-    .autora-foto { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: contrast(1.1); }
-    
+    .autora-foto { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+
+    /* BOTÕES */
     .btn-compra {
-      display: inline-block; padding: 20px 50px; background: var(--ouro); color: var(--noite); 
+      display: inline-block; padding: 22px 55px; background: var(--ouro); color: var(--noite); 
       font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 13px;
       text-decoration: none; letter-spacing: 0.2em; transition: 0.3s; margin-top: 40px;
     }
+    .btn-compra:hover { background: var(--ouro-l); transform: translateY(-5px); }
 
-    /* RESPONSIVO */
+    /* ÚLTIMA SEÇÃO COM FUNDO DIFERENTE (VIOLETA) */
+    .last-section { 
+      padding: 150px 0; 
+      background: radial-gradient(circle at center, var(--purpura) 0%, var(--noite) 100%); 
+      text-align: center; 
+    }
+
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; text-align: center; padding-top: 140px; }
-      .hero-left { padding-right: 0; margin-bottom: 60px; }
       .autora-section { grid-template-columns: 1fr; }
       .autora-foto-wrap { height: 450px; order: -1; }
+      nav { padding: 20px; flex-direction: column; gap: 15px; }
     }
   </style>
 </head>
@@ -107,56 +107,56 @@
 
   <nav>
     <a href="#" class="nav-logo">Raquel Saraiva</a>
-    <a href="#comprar" class="nav-cta">Garantir Exemplar</a>
+    <div class="nav-socials">
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
   </nav>
 
   <main>
-    <!-- HERO -->
     <section class="container hero">
       <div class="hero-left">
         <span class="section-label">Lançamento 2025</span>
         <h1 class="hero-title">Câncer<br><em>A Melhor Coisa</em><br>que Me Aconteceu</h1>
         <p class="hero-subtitle">O outro lado da história que ninguém te conta.</p>
-        <p style="max-width: 450px; opacity: 0.7; margin-bottom: 40px;">Uma jornada de vulnerabilidade, humor e a descoberta do que realmente importa quando o tempo decide nos desafiar.</p>
-        <a href="#comprar" class="btn-compra">Quero Ler Agora</a>
+        <a href="#comprar" class="btn-compra">Garantir Meu Exemplar</a>
       </div>
       <div class="hero-right">
         <img src="mockup-livro.png" class="book-img" alt="Livro Raquel Saraiva">
       </div>
     </section>
 
-    <!-- CAPÍTULOS COM MAIS DESTAQUE -->
+    <!-- SEÇÃO CAPÍTULOS - ESPAÇAMENTO AJUSTADO -->
     <section class="caps-section">
       <div class="container">
-        <span class="section-label">O que você vai encontrar</span>
-        <h2 class="section-title">Uma jornada em <em>17 Capítulos</em></h2>
+        <span class="section-label">A Jornada</span>
+        <h2 class="section-title">O que você vai <em>Encontrar</em></h2>
         
         <div class="caps-grid">
           <div class="cap-item">
             <span class="cap-num">Cap. 01</span>
             <h3 class="cap-titulo">A Dor que Não Passa</h3>
-            <p style="font-size: 13px; margin-top: 10px; opacity: 0.6;">O diagnóstico e o momento em que a vida muda de direção.</p>
+            <p style="font-size: 13px; margin-top: 15px; opacity: 0.6; line-height: 1.8;">Quando o diagnóstico chega e as prioridades mudam instantaneamente.</p>
           </div>
           <div class="cap-item">
             <span class="cap-num">Cap. 06</span>
             <h3 class="cap-titulo">A Queda do Cabelo</h3>
-            <p style="font-size: 13px; margin-top: 10px; opacity: 0.6;">A perda da identidade e a descoberta da força interior.</p>
+            <p style="font-size: 13px; margin-top: 15px; opacity: 0.6; line-height: 1.8;">A descoberta da força que resta quando o exterior é levado.</p>
           </div>
           <div class="cap-item">
             <span class="cap-num">Cap. 13</span>
             <h3 class="cap-titulo">O Transplante</h3>
-            <p style="font-size: 13px; margin-top: 10px; opacity: 0.6;">As histórias de hospital que ninguém tem coragem de contar.</p>
+            <p style="font-size: 13px; margin-top: 15px; opacity: 0.6; line-height: 1.8;">O mergulho honesto nas histórias que ninguém ousa contar.</p>
           </div>
           <div class="cap-item">
             <span class="cap-num">Cap. 17</span>
             <h3 class="cap-titulo">O Que Eu Aprendi</h3>
-            <p style="font-size: 13px; margin-top: 10px; opacity: 0.6;">As lições que transformaram uma biomédica em uma escritora.</p>
+            <p style="font-size: 13px; margin-top: 15px; opacity: 0.6; line-height: 1.8;">As lições finais de quem parou de sobreviver para começar a viver.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- AUTORA -->
     <section class="container autora-section">
       <div class="autora-foto-wrap">
         <img src="foto-autora.png" class="autora-foto" alt="Raquel Saraiva">
@@ -164,24 +164,24 @@
       <div>
         <span class="section-label">A Autora</span>
         <h2 class="section-title" style="margin-bottom: 30px;">Raquel<br>Saraiva</h2>
-        <p style="opacity: 0.8; font-size: 18px; line-height: 1.8;">Especialista em B2B, escritora e sobrevivente. Em 2012, aos 25 anos, o diagnóstico de linfoma mudou tudo. Dez anos após o transplante, ela transforma sua travessia em literatura.</p>
-        <br>
-        <p style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ouro);">"Não escrevi este livro para gerar pena. Escrevi para que alguém pense: se ela conseguiu, eu também posso."</p>
+        <p style="opacity: 0.8; font-size: 18px; line-height: 1.9; margin-bottom: 24px;">Biomédica, especialista em B2B e sobrevivente. Uma década após o transplante, ela transforma sua travessia em uma obra necessária.</p>
+        <p style="font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--ouro); line-height: 1.4;">"Não escrevi para gerar pena. Escrevi para que você saiba que também pode."</p>
       </div>
     </section>
 
-    <!-- COMPRA -->
-    <section id="comprar" style="padding: 120px 0; text-align: center;">
+    <!-- ÚLTIMA SEÇÃO - FUNDO DIFERENTE (GRADIENTE VIOLETA) -->
+    <section id="comprar" class="last-section">
       <div class="container">
-        <h2 class="hero-title" style="font-size: 50px;">Pré-venda Aberta</h2>
-        <p style="margin-bottom: 40px; opacity: 0.6;">Garanta seu exemplar da tiragem exclusiva de lançamento.</p>
-        <a href="#" class="btn-compra" style="background: var(--branco); color: var(--noite);">Garantir Meu Exemplar</a>
+        <span class="section-label" style="justify-content: center; margin-bottom: 10px;">Pré-venda exclusiva</span>
+        <h2 class="hero-title" style="font-size: 55px; margin-bottom: 15px;">Seja o <em>Primeiro</em></h2>
+        <p style="max-width: 600px; margin: 0 auto 40px; opacity: 0.6;">A pré-venda está aberta. Garanta seu exemplar autografado da tiragem limitada de lançamento.</p>
+        <a href="#" class="btn-compra">Quero Meu Exemplar Agora</a>
       </div>
     </section>
   </main>
 
-  <footer style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 11px; opacity: 0.4;">
-    <p>2025 RAQUEL SARAIVA. TODOS OS DIREITOS RESERVADOS.</p>
+  <footer style="padding: 60px 0; background: var(--noite); text-align: center; font-size: 11px; opacity: 0.4; letter-spacing: 0.2em;">
+    <p>© 2025 RAQUEL SARAIVA. TODOS OS DIREITOS RESERVADOS.</p>
   </footer>
 
 </body>
